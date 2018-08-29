@@ -6,16 +6,15 @@
     <link rel="stylesheet" href="vue/css/style.css">
 </head>
 <body>
-    <form action="<?php echo htmlentities("modele/ctable.php"); ?>" method="post">
+    <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
         <label>Nom table :</label>
         <input type="text" name="ctable" value="" placeholder="Entrez nom table à créer">
-        <input type="submit" name="ctable" value="Valider">
+        <input type="submit" name="" value="Valider">
     </form>
-
-    <form action="<?php echo htmlentities("modele/dtable.php"); ?>" method="post">
+    <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
         <label>Nom table :</label>
         <input type="text" name="dtable" value="" placeholder="Entrez nom table à supprimer">
-        <input type="submit" name="dtable" value="Valider">
+        <input type="submit" name="" value="Valider">
     </form>
 
 </body>

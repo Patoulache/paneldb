@@ -18,12 +18,12 @@
     
     public function connect() {
       
-      try { $this->bdd = new PDO("mysql:host=$this->host;dbname=$this->dbname;charset=utf8", $this->login, $this->psw);
-       echo "connexion réussi";  
+      try { $this->bdd = new PDO("mysql:host=$this->host;dbname=$this->dbname;charset=utf8", $this->login, $this->psw,array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+      //  echo "connexion réussi";  
     } catch (Exception $e) {
         echo 'Connexion échouée : ' . $e->getMessage();
       }
-      return $this->bdd;
+      
     }
 
     

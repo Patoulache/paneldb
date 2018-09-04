@@ -18,6 +18,9 @@ class controller {
         if (isset ($_POST['dtable'])) {
             $this->dtable();
         }
+        if (isset ($_POST['mtable'])) {
+            $this->mtable();
+        }
     }
 
     public function ctable() {
@@ -45,6 +48,10 @@ class controller {
             echo '<script> alert ("Vous ne pouvez renseigner qu\'un mot en lettre minuscule")</script>';
         }
 
+    }
+
+    public function mtable() {
+        
     }
 }
 ?>

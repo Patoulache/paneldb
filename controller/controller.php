@@ -21,7 +21,8 @@ class controller {
     private $colType;
 
     public function __construct()  {
-            
+
+        var_dump($_REQUEST);
         $this->regex = '/^[a-z]+$/';
         require_once ("./vue/accueil.php");
         require_once ("./modele/ctable.php");

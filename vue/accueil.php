@@ -5,22 +5,22 @@
     <title>Hé ma DB!</title>
     <link rel="stylesheet" href="vue/css/style.css">
     <script src="././controller/controler.js"></script>
-    <!-- <script src="././modele/"></script> -->
+    <script src="././modele/ajax.js"></script>
 </head>
 <body>
-    <?php echo "<pre>";
+    <!-- <?php echo "<pre>";
     print_r($_SERVER);
     echo "</pre>";
-    ?>
+    ?> -->
     <table>
-    <form>
+    <!-- <form> -->
         <tr>
             <td><label>Nom table à créer :</label></td>
             <td><input type="text" name="ctable" value="" data-zone="creaTab" placeholder="Entrez nom table à créer"></td>
-            <td><button id="BTNcreaTab" data-zone="creaTab">Valider</button></td>
+            <td><button data-zone="creaTab">Valider</button></td>
         </tr>
-    </form>
-    <form>
+    <!-- </form> -->
+    <!-- <form> -->
     <tr>
             <td><label>Nom table à supprimer :</label></td>
             <td><input type="text" name="dtable" value="" data-zone="delTab"placeholder="Entrez nom table à supprimer"></td>

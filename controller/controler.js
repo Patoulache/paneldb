@@ -1,32 +1,40 @@
-AJAX = {
+TOWER = {
 
-    req : new XMLHttpRequest,
     btn : "",
+    params : "",
 
     init : function () {
-        AJAX.btn = document.querySelectorAll("button");
+        TOWER.btn = document.querySelectorAll("button");
         // console.log(AJAX.btn);
-        AJAX.btn.forEach(AJAX.initListener);
+        TOWER.btn.forEach(TOWER.initListener);
     },
     
     initListener : function (el) {
-        /*console.log("ok");
-        console.log(el);*/
-        // el.addEventListener("click",AJAX.test,true);
-       // console.log(el);
-       // console.log(el.dataset["zone"]);
-        el.addEventListener("click",AJAX.test,true);
 
+        el.addEventListener("click",TOWER.test);
 
     },
 
     test : function (e) {
         // var btnTarget = e.target;
-       // console.log("ok");
-        console.log(e.target.getAttribute("data-zone"));
-        // switch ()
+        // console.log("ok");
+        // console.log(e.target.getAttribute("data-zone"));
+        attName = e.target.getAttribute("data-zone");
+        champs = document.querySelectorAll("input[data-zone="+"\""+attName+"\"]");
+        // console.log(champs);
+        TOWER.params = "";
+        champs.forEach(TOWER.ajout);
+        AJAX.init(TOWER.params);
+
+
+        
+    },
+
+    ajout : function (el) {
+
+        TOWER.params+= (TOWER.params.length==0 ? "?" : "&" )+el.name+"="+el.value;
     }
 
 }
 
-window.onload = AJAX.init;
+window.onload = TOWER.init;

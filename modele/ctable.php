@@ -19,10 +19,13 @@ class ctable extends connexion {
         $newTable = $this->bdd->prepare("CREATE TABLE $tableName (column1 int);");
         try {
             $newTable->execute();
-            echo '<script> alert ("La table a bien été créée avec une colonne (column1 int)")</script>';
-        
+            $rep = '<script> alert ("La table a bien été créée avec une colonne (column1 int)")</script>';
+            // return $rep;
+            
         } catch (Exception $e) {
-            echo '<script> alert ("Cette table existe déjà")</script>';
+            $repF = '<script> alert ("Cette table existe déjà")</script>';
+            // return $repF;
+            echo "je suis la";
         }
 
         $this->bdd=null; // Arrêt connexion DB

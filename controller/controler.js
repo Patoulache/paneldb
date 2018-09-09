@@ -32,7 +32,7 @@ TOWER = {
 
     ajout : function (el) {
 
-        TOWER.params+= (TOWER.params.length==0 ? "?" : "&" )+el.name+"="+el.value;
+        TOWER.params+= (TOWER.params.length==0 ? "" : "&" )+el.name+"="+el.value;
     }
 
 }

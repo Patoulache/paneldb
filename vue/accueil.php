@@ -26,8 +26,8 @@
             <td><input type="text" name="dtable" value="" data-zone="delTab"placeholder="Entrez nom table à supprimer"></td>
             <td><button data-zone="delTab">Valider</button></td>
         </tr>
-    </form>
-    <form>
+<!--     </form>
+    <form> -->
     <tr>
             <td>Ajout colonne</td>
         </tr>
@@ -48,8 +48,8 @@
             </td>
             <td><button data-zone="addCol">Valider</button></td>
         </tr>
-    </form>
-    <form>
+<!--     </form>
+    <form> -->
     <tr>
             <td>Suppression colonne</td>
         </tr>
@@ -62,8 +62,8 @@
             <td><input type="text" name="dropColumn" value="" data-zone="delCol" placeholder="Entrez nom colonne à supprimer"></td>
             <td><button data-zone="delCol">Valider</button></td>
         </tr>
-    </form>
-    <form>
+<!--     </form>
+    <form> -->
     <tr>
             <td>Changement nom colonne</td>
         </tr>
@@ -88,8 +88,8 @@
             </td>
             <td><button data-zone="renCol">Valider</button></td>
         </tr>
-    </form>
-    <form>
+<!--     </form>
+    <form> -->
     <tr>
             <td>Modification colonne</td>
         </tr>
@@ -110,8 +110,8 @@
             </td>
             <td><button data-zone="modCol">Valider</button></td>
         </tr>
-    </form>
-    <form>
+<!--     </form>
+    <form> -->
     <tr>
             <td>Ajout entrée table</td>
         </tr>
@@ -128,8 +128,8 @@
             <td><input type="text" name="addEntry" value="" data-zone="addEnt" placeholder="Entrée à ajouter"></td>
             <td><button data-zone="addEnt">Valider</button></td>
         </tr>
-    </form>
-    <form>
+<!--     </form>
+    <form> -->
     <tr>
             <td>Suppression ligne table</td>
         </tr>
@@ -146,8 +146,8 @@
             <td><input type="text" name="dropRow" value="" data-zone="delEnt" placeholder="Entrée à supprimer"></td>
             <td><button data-zone="delEnt">Valider</button></td>
         </tr>
-    </form>
-    <form>
+<!--     </form>
+    <form> -->
     <tr>
             <td>Modification entrée table</td>
         </tr>
@@ -168,7 +168,7 @@
             <td><input type="text" name="oldEntry" value="" data-zone="modEnt" placeholder="Entrée à modifier"></td>
             <td><button data-zone="modEnt">Valider</button></td>
         </tr>
-    </form>
+    <!-- </form> -->
     </table>
 </body>
 </html>

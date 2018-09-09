@@ -22,13 +22,14 @@ class controller {
 
     public function __construct()  {
 
-        var_dump($_REQUEST);
         $this->regex = '/^[a-z]+$/';
         require_once ("./vue/accueil.php");
         require_once ("./modele/ctable.php");
         require_once ("./modele/dtable.php");
         require_once ("./modele/mtable.php");
         if (isset ($_POST['ctable'])) {
+            var_dump($_POST);
+            echo "ok";
             $this->ctable();
         }
         if (isset ($_POST['dtable'])) {

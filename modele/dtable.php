@@ -12,10 +12,10 @@
         $dropTable = $this->bdd->prepare("DROP TABLE $tableName");
         try {
             $dropTable->execute();
-            echo '<script> alert ("La table a bien été supprimée")</script>';
+            echo "La table a bien été supprimée";
         
         } catch (Exception $e) {
-            echo '<script> alert ("Cette table n\'existe pas")</script>';
+            echo "Cette table n\'existe pas";
         }
         
         $this->bdd=null;// Arrêt connexion DB.

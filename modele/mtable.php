@@ -19,12 +19,13 @@ class mtable extends connexion {
     public function addColumn($tableName,$colName,$colType) {
 
         $newColumn = $this->bdd->prepare("ALTER TABLE $tableName ADD $colName $colType");
+
         try {
             $newColumn->execute();
-            echo '<script> alert ("La colonne a bien été ajoutée")</script>';
+            echo "La colonne a bien été ajoutée";
         
         } catch (Exception $e) {
-            echo '<script> alert ("Une erreur est survenue")</script>';
+            echo "Une erreur est survenue";
         }
 
         $this->bdd=null; // Arrêt connexion DB
@@ -34,12 +35,13 @@ class mtable extends connexion {
     public function dropColumn($tableName,$colName) {
 
         $dropColumn = $this->bdd->prepare("ALTER TABLE $tableName DROP COLUMN $colName");
+
         try {
             $dropColumn->execute();
-            echo '<script> alert ("La colonne a bien été supprimée")</script>';
+            echo "La colonne a bien été supprimée";
         
         } catch (Exception $e) {
-            echo '<script> alert ("Une erreur est survenue")</script>';
+            echo "Une erreur est survenue";
         }
 
         $this->bdd=null; // Arrêt connexion DB
@@ -49,12 +51,13 @@ class mtable extends connexion {
     public function renColumn($tableName,$oldColName,$colName,$colType) {
 
         $renColumn = $this->bdd->prepare("ALTER TABLE $tableName CHANGE $oldColName $colName $colType");
+
         try {
             $renColumn->execute();
-            echo '<script> alert ("La colonne a bien été renommée")</script>';
+            echo "La colonne a bien été renommée";
         
         } catch (Exception $e) {
-            echo '<script> alert ("Une erreur est survenue")</script>';
+            echo "Une erreur est survenue";
         }
 
         $this->bdd=null; // Arrêt connexion DB
@@ -62,13 +65,15 @@ class mtable extends connexion {
 
     // Modif type colonne
     public function modColumn($tableName,$colName,$colType) {
+
         $modColumn = $this->bdd->prepare("ALTER TABLE $tableName MODIFY COLUMN $colName $colType");
+
         try {
             $modColumn->execute();
-            echo '<script> alert ("Le type de la colonne a bien été modifié")</script>';
+            echo "Le type de la colonne a bien été modifié";
         
         } catch (Exception $e) {
-            echo '<script> alert ("Une erreur est survenue")</script>';
+            echo "Une erreur est survenue";
         }
 
         $this->bdd=null; // Arrêt connexion DB
@@ -76,15 +81,16 @@ class mtable extends connexion {
 
     // Ajout ligne
     public function addEntry($tableName,$colName,$newEntry) {
-        echo "colname=$colName";
+        
         $addEntry = $this->bdd->prepare("INSERT INTO $tableName($colName) VALUES ('$newEntry')");
+
         try {
             $addEntry->execute();
-            echo '<script> alert ("L\'entrée a bien été enregistrée")</script>';
+            echo "L\'entrée a bien été enregistrée";
         
         } catch (Exception $e) {
 
-             echo '<script> alert ("une erreur est survenue.")</script>';
+             echo "une erreur est survenue.";
         }
 
         $this->bdd=null; // Arrêt connexion DB
@@ -94,13 +100,14 @@ class mtable extends connexion {
     public function dropRow($tableName,$colName,$newEntry) {
 
         $dropRow = $this->bdd->prepare("DELETE FROM $tableName WHERE $colName = '$newEntry'");
+
         try {
             $dropRow->execute();
-            echo '<script> alert ("La ligne d\'entrée a bien été supprimée")</script>';
+            echo "La ligne d\'entrée a bien été supprimée";
         
         } catch (Exception $e) {
 
-            echo '<script> alert ("Une erreur est survenue")</script>';
+            echo "Une erreur est survenue";
         }
 
         $this->bdd=null; // Arrêt connexion DB
@@ -108,20 +115,16 @@ class mtable extends connexion {
 
     // Modif ligne
     public function modEntry($tableName,$colName,$oldEntry,$newEntry) {
-        echo "$tableName";
-        echo "$colName";
-        echo "$oldEntry";
-        echo "$newEntry";
+   
         $modEntry = $this->bdd->prepare("UPDATE $tableName SET $colName = '$newEntry' WHERE $colName = '$oldEntry'");
-        var_dump($modEntry);
+    
         try {
             $modEntry->execute();
-            echo '<script> alert ("L\'entrée a bien été modifiée")</script>';
+            echo "L\'entrée a bien été modifiée";
         
         } catch (Exception $e) {
-            // echo "<br>";
-            // var_dump($e);
-            echo '<script> alert ("Une erreur est survenue")</script>';
+
+            echo "Une erreur est survenue";
         }
 
         $this->bdd=null; // Arrêt connexion DB    

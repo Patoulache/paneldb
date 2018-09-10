@@ -21,9 +21,11 @@ TOWER = {
         // console.log(e.target.getAttribute("data-zone"));
         attName = e.target.getAttribute("data-zone");
         champs = document.querySelectorAll("input[data-zone="+"\""+attName+"\"]");
+        comboBox = document.querySelectorAll("select[data-zone="+"\""+attName+"\"]");
         // console.log(champs);
         TOWER.params = "";
         champs.forEach(TOWER.ajout);
+        comboBox.forEach(TOWER.ajout);
         AJAX.init(TOWER.params);
 
 

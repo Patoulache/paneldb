@@ -2,10 +2,12 @@ TOWER = {
 
     btn : "",
     params : "",
+    aff : "",
 
     init : function () {
         TOWER.btn = document.querySelectorAll("button");
-        // console.log(AJAX.btn);
+        TOWER.aff = document.querySelector("h1");
+        TOWER.aff.addEventListener("click", TOWER.affichage);
         TOWER.btn.forEach(TOWER.initListener);
     },
     
@@ -35,6 +37,10 @@ TOWER = {
     ajout : function (el) {
 
         TOWER.params+= (TOWER.params.length==0 ? "" : "&" )+el.name+"="+el.value;
+    },
+
+    affichage : function () {
+        AJAX.init2("aff=affich");
     }
 
 }

@@ -1,0 +1,13 @@
+table {
+    width: 50%;
+    float: left;
+}
+
+#affichage {
+    width: 50%;
+    float: right;
+}
+
+#affichage h1 {
+    text-align: center;
+}

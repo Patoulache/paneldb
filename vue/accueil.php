@@ -8,28 +8,20 @@
     <script src="././modele/ajax.js"></script>
 </head>
 <body>
-    <!-- <?php echo "<pre>";
-    print_r($_SERVER);
-    echo "</pre>";
-    ?> -->
+
     <table>
-    <!-- <form> -->
         <tr>
             <td><label>Nom table à créer :</label></td>
             <td><input type="text" name="ctable" value="" data-zone="creaTab" placeholder="Entrez nom table à créer"></td>
             <td><button data-zone="creaTab">Valider</button></td>
         </tr>
-    <!-- </form> -->
-    <!-- <form> -->
-    <tr>
+        <tr>
             <td><label>Nom table à supprimer :</label></td>
             <td><input type="text" name="dtable" value="" data-zone="delTab"placeholder="Entrez nom table à supprimer"></td>
             <td><button data-zone="delTab">Valider</button></td>
         </tr>
-<!--     </form>
-    <form> -->
-    <tr>
-            <td>Ajout colonne</td>
+        <tr>
+            <td><h2>Ajout colonne</h2></td>
         </tr>
         <tr>
             <td><label>Nom table à modifier :</label></td>
@@ -48,10 +40,8 @@
             </td>
             <td><button data-zone="addCol">Valider</button></td>
         </tr>
-<!--     </form>
-    <form> -->
-    <tr>
-            <td>Suppression colonne</td>
+        <tr>
+            <td><h2>Suppression colonne</h2></td>
         </tr>
         <tr>
             <td><label>Nom table à modifier :</label></td>
@@ -62,10 +52,8 @@
             <td><input type="text" name="dropColumn" value="" data-zone="delCol" placeholder="Entrez nom colonne à supprimer"></td>
             <td><button data-zone="delCol">Valider</button></td>
         </tr>
-<!--     </form>
-    <form> -->
-    <tr>
-            <td>Changement nom colonne</td>
+        <tr>
+            <td><h2>Changement nom colonne</h2></td>
         </tr>
         <tr>
             <td><label>Nom table à modifier :</label></td>
@@ -88,10 +76,8 @@
             </td>
             <td><button data-zone="renCol">Valider</button></td>
         </tr>
-<!--     </form>
-    <form> -->
-    <tr>
-            <td>Modification colonne</td>
+        <tr>
+            <td><h2>Modification colonne</h2></td>
         </tr>
         <tr>
             <td><label>Nom table à modifier :</label></td>
@@ -110,10 +96,8 @@
             </td>
             <td><button data-zone="modCol">Valider</button></td>
         </tr>
-<!--     </form>
-    <form> -->
-    <tr>
-            <td>Ajout entrée table</td>
+        <tr>
+            <td><h2>Ajout entrée table</h2></td>
         </tr>
         <tr>
             <td><label>Nom table à modifier :</label></td>
@@ -128,10 +112,8 @@
             <td><input type="text" name="addEntry" value="" data-zone="addEnt" placeholder="Entrée à ajouter"></td>
             <td><button data-zone="addEnt">Valider</button></td>
         </tr>
-<!--     </form>
-    <form> -->
-    <tr>
-            <td>Suppression ligne table</td>
+        <tr>
+            <td><h2>Suppression ligne table</h2></td>
         </tr>
         <tr>
             <td><label>Nom table à modifier :</label></td>
@@ -146,10 +128,8 @@
             <td><input type="text" name="dropRow" value="" data-zone="delEnt" placeholder="Entrée à supprimer"></td>
             <td><button data-zone="delEnt">Valider</button></td>
         </tr>
-<!--     </form>
-    <form> -->
-    <tr>
-            <td>Modification entrée table</td>
+        <tr>
+            <td><h2>Modification entrée table</h2></td>
         </tr>
         <tr>
             <td><label>Nom table à modifier :</label></td>
@@ -168,7 +148,9 @@
             <td><input type="text" name="oldEntry" value="" data-zone="modEnt" placeholder="Entrée à modifier"></td>
             <td><button data-zone="modEnt">Valider</button></td>
         </tr>
-    <!-- </form> -->
     </table>
+    <div id="affichage">
+        <h1>Affichage : </h1>
+    </div>
 </body>
 </html>

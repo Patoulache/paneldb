@@ -40,21 +40,24 @@ class controller {
     
     private function vueBtn() {
         
-        $this->regex = '/^[a-z]+$/';
         require_once ("./modele/ctable.php");
         require_once ("./modele/dtable.php");
         require_once ("./modele/mtable.php");
+        require_once ("./modele/affichage.php");
         if (isset ($_POST['ctable'])) {
             $this->ctable();
         } else if (isset ($_POST['dtable'])) {
             $this->dtable();
         } else if (isset ($_POST['mtable'])) {
             $this->mtable();
+        } else if (isset ($_POST['aff'])) {
+            $this->aff();
         } 
     }
-
+    
     private function ctable() {
-
+        
+        $this->regex = '/^[a-z]+$/';
         $this->ctable = $_POST['ctable'];
         preg_match_all($this->regex, $this->ctable, $matches);
         $test = count($matches[0]);
@@ -128,6 +131,12 @@ class controller {
                 break;
         }
         
+    }
+
+    private function aff() {
+        
+        $aff = new Affichage();
+        $aff->affich();
     }
 }
 ?>

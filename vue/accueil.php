@@ -151,6 +151,7 @@
     </table>
     <div id="affichage">
         <h1>Affichage : </h1>
+        <div id="maman"></div>
     </div>
 </body>
 </html>

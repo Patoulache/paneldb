@@ -20,15 +20,20 @@ table {
     border: 1px solid black;
 }
 
-.entree {
-    background-color: lightgreen;
-}
-
-.col {
-    background-color: yellow;
-}
-
 .table {
     background-color: red;
     width: 100%;
+}
+
+#col {
+    background-color: yellow;
+}
+
+.entreeH {
+    background-color: lightgreen;
+    display: none;
+}
+
+.entreeV {
+    background-color: lightgreen;
 }

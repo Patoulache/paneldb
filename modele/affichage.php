@@ -16,9 +16,9 @@ class Affichage extends connexion {
             echo "<tr class='table'><td>".$key[0]."</td></tr>";
             $affi = $this->bdd->query("SHOW COLUMNS FROM $key[0]");
             $affich = $affi->fetchAll(PDO::FETCH_NUM);
-            echo "<tr class='col'>";
+            echo "<tr>";
             foreach($affich as $value) {
-                echo "<td>".$value[0]."</td>";
+                echo "<td id='col'>".$value[0]."</td>";
                 $affEnt = $this->bdd->prepare("SELECT * FROM $key[0]");
                 //$affEnt->bindParam(':valeur', $key[0]); Pas de nom de table en bindParam
                 $affEnt->execute();
@@ -31,7 +31,7 @@ class Affichage extends connexion {
 
                 echo "<tr>";
                 foreach($tata as $val)
-                echo "<td class='entree'>".$val."</td>";
+                echo "<td class='entreeH'>".$val."</td>";
             };
             echo "</tr>";
         };

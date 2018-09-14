@@ -11,3 +11,24 @@ table {
 #affichage h1 {
     text-align: center;
 }
+
+#affichage table {
+    border: 1px solid lightgrey;
+}
+
+#affichage table td {
+    border: 1px solid black;
+}
+
+.entree {
+    background-color: lightgreen;
+}
+
+.col {
+    background-color: yellow;
+}
+
+.table {
+    background-color: red;
+    width: 100%;
+}

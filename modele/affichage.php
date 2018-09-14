@@ -8,19 +8,35 @@ class Affichage extends connexion {
         $this->connect();
         $recup = $this->bdd->query("SHOW TABLES");
         $tableName = $recup->fetchAll(PDO::FETCH_NUM);
-        //print_r($tableName);
+        $balisage = "<table><tbody>";
+        $endBal = "</tbody></table>";
+        echo $balisage;
         foreach($tableName as $key) {
-            echo $key[0]." : ";
+
+            echo "<tr class='table'><td>".$key[0]."</td></tr>";
             $affi = $this->bdd->query("SHOW COLUMNS FROM $key[0]");
             $affich = $affi->fetchAll(PDO::FETCH_NUM);
+            echo "<tr class='col'>";
             foreach($affich as $value) {
-                echo $value[0]."<br>";
-                $affEnt = $this->bdd->prepare("SELECT * FROM $value");
+                echo "<td>".$value[0]."</td>";
+                $affEnt = $this->bdd->prepare("SELECT * FROM $key[0]");
+                //$affEnt->bindParam(':valeur', $key[0]); Pas de nom de table en bindParam
                 $affEnt->execute();
                 $affiEnt = $affEnt->fetchAll(PDO::FETCH_NUM);
-                print_r($affiEnt);
+            
+                
             }
-        }
+            echo "</tr>";
+            foreach($affiEnt as $tata) {
+
+                echo "<tr>";
+                foreach($tata as $val)
+                echo "<td class='entree'>".$val."</td>";
+            };
+            echo "</tr>";
+        };
+     
+        echo $endBal;
     }
 
 }

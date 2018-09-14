@@ -21,6 +21,7 @@ AJAX = {
             req.onload = function() {
             var retour = req.responseText;
             cible.innerHTML = retour;
+            TOWER.ecouter();
             }
         req.open('POST', './index.php', true);
         req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

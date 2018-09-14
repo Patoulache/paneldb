@@ -36,31 +36,41 @@ TOWER = {
     },
 
     affichage : function () {
+
         AJAX.init2("aff=affich");
+    },
+    ecouter : function() {
         TOWER.ent = document.querySelectorAll("#col");
         TOWER.ent.forEach(TOWER.setListener);
         console.log(TOWER.ent);
-   /*      for (var i = 0; i < TOWER.ent.length; i++) {
-            TOWER.setListener(TOWER.ent[i]);
-        } */
     },
     
     setListener : function (el) {
+
         console.log("hoho :",el);
         el.addEventListener("click",TOWER.collapse);
         
     },
 
     collapse : function () {
+
         console.log("yes");
         var entry = document.querySelectorAll(".entreeH");
-        if (entry.className == "entreeH") {
-            entry.className = "entreeV";
-        } else {
-            entry.className = "entreeH";
+        var entry1 = document.querySelectorAll(".entreeV");
+        console.log(entry);
+        entry.forEach(TOWER.changeClass);
+        entry1.forEach(TOWER.changeClass);
+
+    },
+
+    changeClass : function (el) {
+
+        if (el.className == "entreeH") {
+            el.className = "entreeV";
+        } else if (el.className == "entreeV") {
+            el.className = "entreeH";
         };
     }
-
 }
 
 window.onload = TOWER.init;

@@ -4,6 +4,7 @@ TOWER = {
     params : "",
     aff : "",
     ent : "",
+    tblVide : [],
 
     init : function () {
         TOWER.btn = document.querySelectorAll("button");
@@ -39,36 +40,42 @@ TOWER = {
 
         AJAX.init2("aff=affich");
     },
+
     ecouter : function() {
-        TOWER.ent = document.querySelectorAll("#col");
-        TOWER.ent.forEach(TOWER.setListener);
-        console.log(TOWER.ent);
+        var tblName = document.querySelectorAll(".table");
+        for (var i = 0; i<tblName.length; i++) {
+            TOWER.tblVide.push(tblName[i].innerText);            
+        };
+        TOWER.tblVide.forEach(function(el) {
+            TOWER.ent = document.querySelectorAll("#col.".concat(el));
+            TOWER.ent.forEach(TOWER.setListener);
+
+        });
     },
     
     setListener : function (el) {
 
-        console.log("hoho :",el);
         el.addEventListener("click",TOWER.collapse);
         
     },
 
-    collapse : function () {
-
-        console.log("yes");
-        var entry = document.querySelectorAll(".entreeH");
-        var entry1 = document.querySelectorAll(".entreeV");
-        console.log(entry);
-        entry.forEach(TOWER.changeClass);
-        entry1.forEach(TOWER.changeClass);
+    collapse : function (e) {
+        var test = e.target.className;
+        TOWER.tblVide.forEach(function() {
+            var entry = document.querySelectorAll(".entreeH.".concat(test));
+            var entry1 = document.querySelectorAll(".entreeV.".concat(test));
+            entry.forEach(TOWER.changeClass);
+            entry1.forEach(TOWER.changeClass);
+        });
 
     },
 
     changeClass : function (el) {
 
-        if (el.className == "entreeH") {
-            el.className = "entreeV";
-        } else if (el.className == "entreeV") {
-            el.className = "entreeH";
+        if (el.classList[0] == "entreeH") {
+            el.classList.replace("entreeH", "entreeV");
+        } else if (el.classList[0] == "entreeV") {
+            el.classList.replace("entreeV", "entreeH");
         };
     }
 }

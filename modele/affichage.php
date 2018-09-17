@@ -12,30 +12,30 @@ class Affichage extends connexion {
         $endBal = "</tbody></table>";
         echo $balisage;
         foreach($tableName as $key) {
-
+     
             echo "<tr class='table'><td>".$key[0]."</td></tr>";
             $affi = $this->bdd->query("SHOW COLUMNS FROM $key[0]");
             $affich = $affi->fetchAll(PDO::FETCH_NUM);
             echo "<tr>";
+          
             foreach($affich as $value) {
-                echo "<td id='col'>".$value[0]."</td>";
+                echo "<td id='col' class=".$key[0].">".$value[0]."</td>";
                 $affEnt = $this->bdd->prepare("SELECT * FROM $key[0]");
                 //$affEnt->bindParam(':valeur', $key[0]); Pas de nom de table en bindParam
                 $affEnt->execute();
                 $affiEnt = $affEnt->fetchAll(PDO::FETCH_NUM);
-            
-                
+
             }
             echo "</tr>";
             foreach($affiEnt as $tata) {
-
+                //print_r($value[0]);
+                
                 echo "<tr>";
                 foreach($tata as $val)
-                echo "<td class='entreeH'>".$val."</td>";
+                echo "<td class='entreeH ".$key[0]."'>".$val."</td>";
             };
             echo "</tr>";
-        };
-     
+            };
         echo $endBal;
     }
 

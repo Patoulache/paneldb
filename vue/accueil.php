@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <table>
+    <table id="left">
         <tr>
             <td><label>Nom table à créer :</label></td>
             <td><input type="text" name="ctable" value="" data-zone="creaTab" placeholder="Entrez nom table à créer"></td>

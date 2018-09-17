@@ -1,11 +1,20 @@
-table {
+body {
+  /*background-image: url(../images/drapeaujamaique.jpg);*/
+  background-image: linear-gradient(to top left, #26AAF0, #12EBE1); 
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#left {
     width: 50%;
     float: left;
+    text-shadow: 1px 1px white;
 }
 
 #affichage {
     width: 50%;
     float: right;
+    text-shadow: 1px 1px white;
 }
 
 #affichage h1 {
@@ -13,6 +22,7 @@ table {
 }
 
 #affichage table {
+    width: 100%;
     border: 1px solid lightgrey;
 }
 
@@ -30,10 +40,10 @@ table {
 }
 
 .entreeH {
-    background-color: lightgreen;
+    background-color: #67E167;
     display: none;
 }
 
 .entreeV {
-    background-color: lightgreen;
+    background-color: #67E167;
 }

@@ -21,7 +21,7 @@ class controller {
     private $colType;
 
     public function __construct()  {
-
+        $this->regex = '/^[a-z]+$/';
     }
     
     public function postTaMere () {
@@ -57,7 +57,6 @@ class controller {
     
     private function ctable() {
         
-        $this->regex = '/^[a-z]+$/';
         $this->ctable = $_POST['ctable'];
         preg_match_all($this->regex, $this->ctable, $matches);
         $test = count($matches[0]);

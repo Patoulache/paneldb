@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <td><label>Nom table à supprimer :</label></td>
-            <td><input type="text" name="dtable" value="" data-zone="delTab"placeholder="Entrez nom table à supprimer"></td>
+            <td><input type="text" name="dtable" value="" data-zone="delTab" placeholder="Entrez nom table à supprimer"></td>
             <td><button data-zone="delTab">Valider</button></td>
         </tr>
         <tr>

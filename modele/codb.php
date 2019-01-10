@@ -10,10 +10,10 @@
 
     public function __construct() {
       // constructeur 
-      $this->host     = 'localhost';
-      $this->dbname   = 'testpanel';
+      $this->host     = '192.168.3.125';
+      $this->dbname   = 'testexodbdroopy';
       $this->login    = 'root';
-      $this->psw      = 'coda2018';
+      $this->psw      = 'sqlcoda#2018!';
     }
     
     public function connect() {
